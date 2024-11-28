@@ -1,0 +1,30 @@
+﻿@model Lab5.Models.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h2>Inregistrare</h2>
+
+<form asp-action="StoreRegister" method="post">
+    @Html.AntiForgeryToken()
+    <div>
+        <label>Login:</label>
+        <input type="text" asp-for="login" class="form-control" placeholder="Login" />
+        <span asp-validation-for="login" class="text-danger"></span>
+    </div>
+    <br>
+    <div>
+        <label>Parola:</label>
+        <input type="password" asp-for="password" class="form-control" placeholder="Parola" />
+        <span asp-validation-for="password" class="text-danger"></span>
+    </div>
+    <br>
+    <div>
+        <label>Confirma Parola:</label>
+        <input type="password" asp-for="confirmPassword" class="form-control" placeholder="Parola" />
+        <span asp-validation-for="confirmPassword" class="text-danger"></span>
+    </div>
+    <br>
+    <button type="submit" class="form-control">Inregistreazate</button>
+</form>
